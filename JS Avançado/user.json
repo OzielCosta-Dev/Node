@@ -1,0 +1,17 @@
+
+{
+    "name": "JS Avançado",
+    "email": "js@avançado.com",
+    "hobbies": ["Programar", "Viajar", "Cozinhar"],
+    "casado": false,
+    "filhos": [
+        {
+            "nome": "Maria",
+            "idade": 5
+        },
+        {
+            "nome": "João",
+            "idade": 3
+        }
+    ]
+}

@@ -46,13 +46,15 @@
 */
 
 import express from 'express'
+import cors from 'cors'
 import { PrismaClient } from '@prisma/client'
+
 
 const prisma = new PrismaClient()
 
 const app = express()
 app.use(express.json())
-
+app.use(cors())
 
 
 
@@ -75,7 +77,7 @@ app.post('/usuarios', async (req, res) => {
   })
 
   console.log(user)
-  res.status(201).json({ message: "Usuario criado com sucesso!" })
+  res.status(201).json(user)
 
 })
 
@@ -95,7 +97,7 @@ app.put('/usuarios/:id', async (req, res) => {
 
 
   console.log(user)
-  res.status(200).json({ message: "Usuario atualizado com sucesso!" })
+  res.status(200).json(user)
 
 })
 
@@ -106,7 +108,7 @@ app.delete('/usuarios/:id', async (req, res) => {
     }
   })
 
-  res.status(200).json({ message: "Usuario deletado com sucesso!" })
+  res.status(200).json(user)
 })
 
 app.listen(3000)
